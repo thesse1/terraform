@@ -21,6 +21,9 @@ stages:
         name: vmssagentspool
         vmImage: ubuntu-20.04
       steps:
+      # Step 0: install Terraform on the Azure Pipelines agent
+      - bash: sudo apt-get -y install zip
+        displayName: Install zip
       # Step 1: run the Checkov Static Code Analysis
       - bash: $(terraformWorkingDirectory)/checkov.sh $(terraformWorkingDirectory)
         displayName: Checkov Static Code Analysis
