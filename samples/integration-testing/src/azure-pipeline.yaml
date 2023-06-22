@@ -18,6 +18,7 @@ stages:
     - job: TerraformContinuousIntegrationJob
       displayName: TerraformContinuousIntegration - CI Job
       pool:
+        name: vmssagentspool
         vmImage: ubuntu-20.04
       steps:
       # Step 1: run the Checkov Static Code Analysis
